@@ -26,42 +26,48 @@
         }
 
        function playRound(humanChoice, computerChoice){
-            if (humanChoice == "schere" && computerChoice == "Stein"){
+            if (humanChoice == "scissors" && computerChoice == "Rock"){
                 console.log("You chose Scissors.");
-                console.log("Computer chose Stone.");
-                console.log("You lost! Stone beats Scissors.");
-            } else if (humanChoice == "schere" && computerChoice == "Papier"){
+                console.log("Computer chose Rock.");
+                console.log("You lost! Rock beats Scissors.");
+                computerScore++;
+            } else if (humanChoice == "scissors" && computerChoice == "Paper"){
                 console.log("You chose Scissors.");
                 console.log("Computer chose Paper.");
                 console.log("You won! Scissors beats paper.");
-            } else if (humanChoice == "schere" && computerChoice == "Schere"){
+                humanScore++;
+            } else if (humanChoice == "scissors" && computerChoice == "Scissors"){
                 console.log("You chose Scissors.");
                 console.log("Computer chose Scissors.");
                 console.log("Draw! Both chose the same thing.");
-            } else if (humanChoice == "stein" && computerChoice == "Stein"){
-                console.log("You chose Stone.");
-                console.log("Computer chose Stone.");
+            } else if (humanChoice == "rock" && computerChoice == "Rock"){
+                console.log("You chose Rock.");
+                console.log("Computer chose Rock.");
                 console.log("Draw! Both chose the same thing.");
-            } else if (humanChoice == "stein" && computerChoice == "Papier"){
-                console.log("You chose Stone.");
+            } else if (humanChoice == "rock" && computerChoice == "Paper"){
+                console.log("You chose Rock.");
                 console.log("Computer chose Paper.");
-                console.log("You lost! Paper beats Stone.");
-            } else if (humanChoice == "stein" && computerChoice == "Schere"){
-                console.log("You chose Stone.");
+                console.log("You lost! Paper beats Rock.");
+                computerScore++;
+            } else if (humanChoice == "rock" && computerChoice == "Scissors"){
+                console.log("You chose Rock.");
                 console.log("Computer chose Scissors.");
-                console.log("You won! Stone beats Scissors.");
-            } else if (humanChoice == "schere" && computerChoice == "Stein"){
-                console.log("You chose Scissors.");
-                console.log("Computer chose Stone.");
-                console.log("You lost! Stone beats Scissors.");
-            } else if (humanChoice == "schere" && computerChoice == "Papier"){
-                console.log("You chose Scissors.");
+                console.log("You won! Rock beats Scissors.");
+                humanScore++;
+            } else if (humanChoice == "paper" && computerChoice == "Rock"){
+                console.log("You chose Paper.");
+                console.log("Computer chose Rock.");
+                console.log("You won! Paper beats Rock.");
+                computerScore++;
+            } else if (humanChoice == "paper" && computerChoice == "Paper"){
+                console.log("You chose Paper.");
                 console.log("Computer chose Paper.");
-                console.log("You won! Scissors beats Paper.");
-            } else if (humanChoice == "schere" && computerChoice == "Schere"){
-                console.log("You chose Scissors.");
-                console.log("Computer chose Scissors.");
                 console.log("Draw! Both chose the same thing.");
+                humanScore++;
+            } else if (humanChoice == "paper" && computerChoice == "Scissors"){
+                console.log("You chose Paper.");
+                console.log("Computer chose Scissors.");
+                console.log("You lost! Scissors beats Paper.");
             }
        }
 
