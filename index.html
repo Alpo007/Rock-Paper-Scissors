@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock,Paper,Scissors</title>
+</head>
+<body>
+    <script>
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function getComputerChoice(){
+            let randomNumber = Math.random()* (4-1)+1;
+            if (randomNumber <= 4 && randomNumber > 3){
+                return "Scissors";
+            } else if (randomNumber <= 3 && randomNumber > 2){
+                return "Rock";
+            } else {
+                return "Paper";
+            }
+        }
+
+        function getHumanChoice(){
+            return prompt("Rock, Paper or Scissors?").toLowerCase();
+        }
+
+       function playRound(humanChoice, computerChoice){
+            if (humanChoice == "schere" && computerChoice == "Stein"){
+                console.log("You chose Scissors.");
+                console.log("Computer chose Stone.");
+                console.log("You lost! Stone beats Scissors.");
+            } else if (humanChoice == "schere" && computerChoice == "Papier"){
+                console.log("You chose Scissors.");
+                console.log("Computer chose Paper.");
+                console.log("You won! Scissors beats paper.");
+            } else if (humanChoice == "schere" && computerChoice == "Schere"){
+                console.log("You chose Scissors.");
+                console.log("Computer chose Scissors.");
+                console.log("Draw! Both chose the same thing.");
+            } else if (humanChoice == "stein" && computerChoice == "Stein"){
+                console.log("You chose Stone.");
+                console.log("Computer chose Stone.");
+                console.log("Draw! Both chose the same thing.");
+            } else if (humanChoice == "stein" && computerChoice == "Papier"){
+                console.log("You chose Stone.");
+                console.log("Computer chose Paper.");
+                console.log("You lost! Paper beats Stone.");
+            } else if (humanChoice == "stein" && computerChoice == "Schere"){
+                console.log("You chose Stone.");
+                console.log("Computer chose Scissors.");
+                console.log("You won! Stone beats Scissors.");
+            } else if (humanChoice == "schere" && computerChoice == "Stein"){
+                console.log("You chose Scissors.");
+                console.log("Computer chose Stone.");
+                console.log("You lost! Stone beats Scissors.");
+            } else if (humanChoice == "schere" && computerChoice == "Papier"){
+                console.log("You chose Scissors.");
+                console.log("Computer chose Paper.");
+                console.log("You won! Scissors beats Paper.");
+            } else if (humanChoice == "schere" && computerChoice == "Schere"){
+                console.log("You chose Scissors.");
+                console.log("Computer chose Scissors.");
+                console.log("Draw! Both chose the same thing.");
+            }
+       }
+
+       const humanSelection = getHumanChoice();
+       const computerSelection = getComputerChoice();
+
+       playRound(humanSelection, computerSelection);
+ 
+    </script>
+    
+</body>
+</html>
