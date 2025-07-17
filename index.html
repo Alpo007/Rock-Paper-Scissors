@@ -4,88 +4,290 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock,Paper,Scissors</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div id="header">
+    <h1>Rock-Paper-Scissors Game</h1>
+    </div>
+    <div id="buttons">
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    </div>
+
+    <div id="results">
+        <div id="choices">
+        <p id="p1"></p>
+        <p id="p2"></p>
+        </div>
+        <p id="p3"></p>
+        <p id="yourScore"></p>
+        <p id="pcScore"></p>
+        <p id="won"></p>
+    </div>
+
     <script>
         let humanScore = 0;
         let computerScore = 0;
 
         function getComputerChoice(){
-            let randomNumber = Math.random()* (4-1)+1;
-            if (randomNumber <= 4 && randomNumber > 3){
+            let randomNumber = Math.floor(Math.random()* (4-1)+1);
+            if (randomNumber == 1 ){
                 return "Scissors";
-            } else if (randomNumber <= 3 && randomNumber > 2){
+            } else if (randomNumber == 2 ){
                 return "Rock";
             } else {
                 return "Paper";
             }
         }
 
-        function getHumanChoice(){
-            return prompt("Rock, Paper or Scissors?").toLowerCase();
-        }
-
        function playRound(humanChoice, computerChoice){
             if (humanChoice == "scissors" && computerChoice == "Rock"){
-                console.log("You chose Scissors.");
-                console.log("Computer chose Rock.");
-                console.log("You lost! Rock beats Scissors.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Scissors.";
+                p2.textContent = "Computer chose Rock.";
+                p3.textContent = "You lost! Rock beats Scissors.";
                 computerScore++;
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
             } else if (humanChoice == "scissors" && computerChoice == "Paper"){
-                console.log("You chose Scissors.");
-                console.log("Computer chose Paper.");
-                console.log("You won! Scissors beats paper.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Scissors.";
+                p2.textContent = "Computer chose Paper.";
+                p3.textContent = "You won! Scissors beats paper.";
                 humanScore++;
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
             } else if (humanChoice == "scissors" && computerChoice == "Scissors"){
-                console.log("You chose Scissors.");
-                console.log("Computer chose Scissors.");
-                console.log("Draw! Both chose the same thing.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Scissors.";
+                p2.textContent = "Computer chose Scissors.";
+                p3.textContent = "Draw! Both chose the same thing.";
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
             } else if (humanChoice == "rock" && computerChoice == "Rock"){
-                console.log("You chose Rock.");
-                console.log("Computer chose Rock.");
-                console.log("Draw! Both chose the same thing.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Rock.";
+                p2.textContent = "Computer chose Rock.";
+                p3.textContent = "Draw! Both chose the same thing.";
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
             } else if (humanChoice == "rock" && computerChoice == "Paper"){
-                console.log("You chose Rock.");
-                console.log("Computer chose Paper.");
-                console.log("You lost! Paper beats Rock.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Rock.";
+                p2.textContent = "Computer chose Paper.";
+                p3.textContent = "You lost! Paper beats Rock.";
                 computerScore++;
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
             } else if (humanChoice == "rock" && computerChoice == "Scissors"){
-                console.log("You chose Rock.");
-                console.log("Computer chose Scissors.");
-                console.log("You won! Rock beats Scissors.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Rock.";
+                p2.textContent = "Computer chose Scissors.";
+                p3.textContent = "You won! Rock beats Scissors.";
                 humanScore++;
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
             } else if (humanChoice == "paper" && computerChoice == "Rock"){
-                console.log("You chose Paper.");
-                console.log("Computer chose Rock.");
-                console.log("You won! Paper beats Rock.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Paper.";
+                p2.textContent = "Computer chose Rock.";
+                p3.textContent = "You won! Paper beats Rock.";
                 humanScore++;
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
             } else if (humanChoice == "paper" && computerChoice == "Paper"){
-                console.log("You chose Paper.");
-                console.log("Computer chose Paper.");
-                console.log("Draw! Both chose the same thing.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Paper.";
+                p2.textContent = "Computer chose Paper.";
+                p3.textContent = "Draw! Both chose the same thing.";
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
             } else if (humanChoice == "paper" && computerChoice == "Scissors"){
-                console.log("You chose Paper.");
-                console.log("Computer chose Scissors.");
-                console.log("You lost! Scissors beats Paper.");
+                p1.textContent = " ";
+                p2.textContent = " ";
+                p3.textContent = " ";
+                won.textContent = " ";
+
+                p1.textContent = "You chose Paper.";
+                p2.textContent = "Computer chose Scissors.";
+                p3.textContent = "You lost! Scissors beats Paper.";
                 computerScore++;
-            }
+                yourScore.innerHTML = "Your Score is: " + humanScore;
+                pcScore.textContent = "Computer's Score is: " + computerScore;
+
+                if (humanScore === 5){
+                    won.textContent = "YOU WON, CONGRATULATIONS!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+
+                if (computerScore ===5){
+                    won.textContent = "COMPUTER WON, BETTER LUCK NEXT TIME!";
+                    humanScore = 0;
+                    computerScore = 0;
+                }
+            } 
        }
 
 
-       function playGame(){
-            const humanSelection = getHumanChoice();
+       function playGame(humanSelection){
             const computerSelection = getComputerChoice();
             playRound(humanSelection, computerSelection);
-            console.log("Your Score: " + humanScore);
-            console.log("Computer Score: " + computerScore);
-       }
+       } 
 
-       playGame();
-       playGame();
-       playGame();
-       playGame();
-       playGame();
- 
+       const rock = document.querySelector("#rock");
+       rock.addEventListener("click", function(){
+            playGame("rock");
+       });
+
+       const scissors = document.querySelector("#scissors");
+       scissors.addEventListener("click", function(){
+            playGame("scissors");
+       });
+
+       const paper = document.querySelector("#paper");
+       paper.addEventListener("click", function(){
+            playGame("paper");
+       });
+
+       const results = document.querySelector("#results");
+       const p1 = document.querySelector("#p1");
+       const p2 = document.querySelector("#p2");
+       const p3 = document.querySelector("#p3");
+       const yourScore = document.querySelector("#yourScore");
+       const pcScore = document.querySelector("#pcScore");
+       const won = document.querySelector("#won");
+
     </script>
     
 </body>

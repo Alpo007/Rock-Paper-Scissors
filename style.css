@@ -1,0 +1,73 @@
+body{
+    font-family: Roboto;
+    margin: 0;
+    flex-direction: column;
+}
+
+#header{
+    display:flex;
+    align-self: center;
+    justify-content: center;
+    background-color: grey;
+    border: solid black 8px;
+}
+
+#buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#rock{
+    font-size: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border: solid 5px black;
+}
+
+#paper{
+    font-size: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border: solid 5px black;
+}
+
+#scissors{
+    font-size: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border: solid 5px black;
+}
+
+#rock:hover{
+    background-color: rgb(179, 179, 179);
+    cursor: grab;
+}
+
+#paper:hover{
+    background-color: rgb(179, 179, 179);
+    cursor: grab;
+}
+
+#scissors:hover{
+    background-color: rgb(179, 179, 179);
+    cursor: grab;
+}
+
+#results{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+}
+
+#choices{
+    display: flex;
+}
+
+#p1{
+    margin: 30px;
+}
+#p2{
+    margin: 30px;
+}
